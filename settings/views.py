@@ -1,8 +1,7 @@
 from django.shortcuts import render
-
-# Create your views here.
-from .models import Setmodel
+from .models import Setmodel,Galery
 
 def set_list(request):
-    employ = Setmodel.objects.all()
-    return render(request, 'Setmodel/INDEX.HTML', {'Setmodel': Setmodel})
+    setting= Setmodel.objects.latest("id")
+    galary = Galery.objects.latest("id")
+    return render(request, 'INDEX.HTML', locals())

@@ -21,3 +21,15 @@ class Setmodel(models.Model):
     URL=models.URLField(
         verbose_name="ccылак и контакты (эщкере)"
     )
+        
+class Galery(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Заголовок"
+    )
+    image = models.ImageField(
+        upload_to='galery/'
+    )
+    description = models.TextField(
+        verbose_name='Описание фото'
+    )
